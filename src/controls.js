@@ -14,7 +14,7 @@ window.addEventListener("keyup", (e) => {
 let maxVelocity = 0.04;
 let jawVelocity = 0;
 let pitchVelocity = 0;
-let planeSpeed = 0.006;
+let planeSpeed = 0.005;
 export let turbo = 0;
 
 export function updatePlaneAxis(x, y, z, planePosition, camera) {
@@ -28,19 +28,19 @@ export function updatePlaneAxis(x, y, z, planePosition, camera) {
     pitchVelocity = Math.sign(pitchVelocity) * maxVelocity;
 
   if (controls["a"]) {
-    jawVelocity += 0.0025;
+    jawVelocity += 0.00125;
   }
 
   if (controls["d"]) {
-    jawVelocity -= 0.0025;
+    jawVelocity -= 0.00125;
   }
 
   if (controls["w"]) {
-    pitchVelocity -= 0.0025;
+    pitchVelocity -= 0.00125;
   }
 
   if (controls["s"]) {
-    pitchVelocity += 0.0025;
+    pitchVelocity += 0.00125;
   }
 
   if (controls["r"]) {
@@ -66,7 +66,7 @@ export function updatePlaneAxis(x, y, z, planePosition, camera) {
 
   // plane position & velocity
   if (controls.shift) {
-    turbo += 0.025;
+    turbo += 0.00125;
   } else {
     turbo *= 0.95;
   }
@@ -74,7 +74,7 @@ export function updatePlaneAxis(x, y, z, planePosition, camera) {
 
   let turboSpeed = easeOutQuad(turbo) * 0.02;
 
-  camera.fov = 45 + turboSpeed * 900;
+  camera.fov = 20 + turboSpeed * 900;
   camera.updateProjectionMatrix();
 
   planePosition.add(z.clone().multiplyScalar(-planeSpeed -turboSpeed));
