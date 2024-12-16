@@ -1,7 +1,11 @@
-import React, { forwardRef, useMemo } from 'react';
+/* eslint-disable react/display-name */
+/* eslint-disable no-empty-pattern */
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable no-unused-vars */
+import { forwardRef, useMemo } from 'react';
 import { Uniform } from 'three';
 import { Effect } from 'postprocessing';
-import { turbo } from './controls';
+import { turbo } from '@/controls';
 
 // from:
 // https://docs.pmnd.rs/react-postprocessing/effects/custom-effects

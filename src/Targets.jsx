@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unknown-property */
 import { useState, useMemo } from "react";
 import { Quaternion, TorusGeometry, Vector3 } from "three";
 import { mergeBufferGeometries } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
-import { planePosition } from "./Airplane";
+import { planePosition } from "@/Airplane";
 
 function randomPoint(scale) {
   return new Vector3(
@@ -51,7 +52,7 @@ export function Targets() {
   }, [targets]);
 
   useFrame(() => {
-    targets.forEach((target, i) => {
+    targets.forEach((target) => {
       const v = planePosition.clone().sub(target.center);
       const dist = target.direction.dot(v);
       const projected = planePosition

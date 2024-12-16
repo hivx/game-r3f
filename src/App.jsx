@@ -1,12 +1,13 @@
-import React from "react";
+/* eslint-disable react/no-unknown-property */
+// import React from "react";
 import { PerspectiveCamera, Environment } from "@react-three/drei";
 import { EffectComposer, HueSaturation } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
-import { Landscape } from "./Landscape";
-import { SphereEnv } from "./SphereEnv";
-import { Airplane } from "./Airplane";
-import { Targets } from "./Targets";
-import { MotionBlur } from "./MotionBlur";
+import { Landscape } from "@/Landscape";
+import { SphereEnv } from "@/SphereEnv";
+import { Airplane } from "@/Airplane";
+import { Targets } from "@/Targets";
+import { MotionBlur } from "@/MotionBlur";
 
 function App() {
   return (
